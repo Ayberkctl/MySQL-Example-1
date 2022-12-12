@@ -1,0 +1,25 @@
+mysql -u root -p
+SHOW DATABASES;
+CREATE DATABASE sqltest;
+USE sqltest;
+CREATE TABLE uyeler(test int);
+RENAME TABLE uyeler TO users;
+DROP TABLE users;
+<hr>
+SHOW tables;
+ALTER TABLE USERS ADD COLUMN uye_id int
+ALTER TABLE USERS ADD COLUMN (users_name varchar(255),users_age int);
+ALTER TABLE users ADD users_surname VARCHAR(255) AFTER users_name;
+DESCRIBE users;
+ALTER TABLE users ADD test2 VARCHAR(255) FIRST
+DESCRIBE users;
+EXPLAIN users;
+SHOW FIELDS FROM users;
+SHOW COLUMNS FROM sqltest.users;
+ALTER TABLE users DROP COLUMN test2;
+ALTER TABLE users DROP COLUMN test;
+ALTER TABLE users CHANGE COLUMN uye_id  users_id int;
+ALTER TABLE users ADD PRIMARY KEY (users_id);
+ALTER TABLE users ADD users_id int AUTO_INCREMENT PRIMARY KEY;
+
+SELECT * FROM information_schema.TABLES WHERE TABLE_SCHEMA="sqltest";
